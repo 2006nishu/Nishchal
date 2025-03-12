@@ -1,0 +1,30 @@
+import random
+
+questions = [
+    {"question": "What is the capital of France?", "options": ["A. Berlin", "B. Madrid", "C. Paris", "D. Rome"], "answer": "C"},
+    {"question": "Which planet is known as the Red Planet?", "options": ["A. Earth", "B. Mars", "C. Jupiter", "D. Venus"], "answer": "B"},
+    {"question": "What is 5 + 7?", "options": ["A. 10", "B. 12", "C. 15", "D. 17"], "answer": "B"},
+    {"question": "Who wrote 'Hamlet'?", "options": ["A. Charles Dickens", "B. J.K. Rowling", "C. William Shakespeare", "D. Leo Tolstoy"], "answer": "C"},
+    {"question": "What is the largest ocean on Earth?", "options": ["A. Atlantic Ocean", "B. Indian Ocean", "C. Pacific Ocean", "D. Arctic Ocean"], "answer": "C"}
+]
+
+def quiz():
+    score = 0
+    random.shuffle(questions)
+
+    for q in questions:
+        print("\n" + q["question"])
+        for option in q["options"]:
+            print(option)
+        
+        answer = input("Enter your choice (A/B/C/D): ").strip().upper()
+        
+        if answer == q["answer"]:
+            print("✅ Correct!")
+            score += 1
+        else:
+            print(f"❌ Wrong! The correct answer is {q['answer']}.")
+
+    print(f"\n🎉 Quiz Over! Your final score is {score}/{len(questions)}.")
+
+quiz()
