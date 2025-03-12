@@ -1,0 +1,70 @@
+import random
+
+def zombie_game():
+    print("\n🧟‍♂️ Welcome to the Zombie Survival Game! 🧟‍♂️")
+    print("The world has been overrun by zombies, and you must survive!")
+
+    health = 100
+    weapons = ["Knife"]
+    food = 2
+
+    while True:
+        print("\n--- Your Stats ---")
+        print(f"💖 Health: {health}")
+        print(f"🔪 Weapons: {', '.join(weapons)}")
+        print(f"🍖 Food: {food} pieces left")
+        
+        print("\nChoose an action:")
+        print("1️⃣ Search for supplies")
+        print("2️⃣ Fight a zombie")
+        print("3️⃣ Find a safe place")
+        print("4️⃣ Eat food to regain health")
+        print("5️⃣ Quit Game")
+
+        choice = input("\nEnter your choice: ")
+
+        if choice == "1":
+            found_item = random.choice(["Gun", "Bat", "Food", "Nothing"])
+            if found_item == "Nothing":
+                print("🔍 You found nothing! Keep searching!")
+            elif found_item == "Food":
+                food += 1
+                print("🍖 You found extra food! +1")
+            else:
+                weapons.append(found_item)
+                print(f"⚔️ You found a {found_item}!")
+
+        elif choice == "2":
+            if "Gun" in weapons:
+                print("🔫 You used your gun and killed the zombie! You're safe.")
+            elif "Bat" in weapons or "Knife" in weapons:
+                print("⚔️ You fought bravely and killed the zombie but got injured.")
+                health -= random.randint(10, 30)
+            else:
+                print("💀 You had no weapons... The zombie bit you!")
+                health -= 50
+
+        elif choice == "3":
+            print("🏠 You found a safe place and rested.")
+            health += 10
+
+        elif choice == "4":
+            if food > 0:
+                food -= 1
+                health += 20
+                print("🍖 You ate some food and regained health!")
+            else:
+                print("⚠️ You have no food left!")
+
+        elif choice == "5":
+            print("🚪 You quit the game. Stay safe, survivor!")
+            break
+
+        else:
+            print("⚠️ Invalid choice! Try again.")
+
+        if health <= 0:
+            print("\n💀 You died... The zombies got you!")
+            break
+
+zombie_game()
