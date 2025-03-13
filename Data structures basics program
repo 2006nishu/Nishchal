@@ -1,0 +1,41 @@
+#list
+nishchal = ("Nishchal", 20, 30, 40, 50)
+print(nishchal[0])
+
+temp_list = list(nishchal)
+temp_list.remove("Nishchal")
+nishchal = tuple(temp_list)
+print(nishchal)
+
+temp_list = list(nishchal)
+temp_list[1] = 99
+nishchal = tuple(temp_list)
+print(nishchal)
+
+temp_list = list(nishchal)
+temp_list.append(60)
+nishchal = tuple(temp_list)
+print(nishchal)
+
+temp_list = list(nishchal)
+temp_list.insert(2, 15)
+nishchal = tuple(temp_list)
+print(nishchal)
+
+temp_list = list(nishchal)
+temp_list.pop(1)
+nishchal = tuple(temp_list)
+print(nishchal)
+
+temp_list = list(nishchal)
+temp_list.sort()
+nishchal = tuple(temp_list)
+print(nishchal)
+
+temp_list = list(nishchal)
+temp_list.reverse()
+nishchal = tuple(temp_list)
+print(nishchal)
+
+for item in nishchal:
+    print(item)
