@@ -1,0 +1,11 @@
+class Car:
+    def set_details(self, brand, model):
+        self.brand = brand  # Attribute
+        self.model = model  # Attribute
+
+    def display_info(self):
+        print(f"Car: {self.brand} {self.model}")
+
+my_car = Car()
+my_car.set_details("Tesla", "Model S")
+my_car.display_info()
