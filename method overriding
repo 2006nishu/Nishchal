@@ -1,0 +1,14 @@
+# Parent class
+class Vehicle:
+    def start(self):
+        print("The vehicle is starting...")
+
+class Car(Vehicle):
+    def start(self):
+        print("The car engine is starting with a roar!")
+
+v = Vehicle()
+c = Car()
+
+v.start()  
+c.start() 
