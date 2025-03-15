@@ -1,0 +1,4 @@
+file=open("/content/nishchal_day_1.py","r")
+content=file.read()
+print(content)
+file.close()
