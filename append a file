@@ -1,0 +1,8 @@
+#Append to a File
+try:
+    file = open("example.text")
+    file.write("Hello, world!")
+except Exception as e:
+    print("Error:", e)
+finally:
+    file.close()
